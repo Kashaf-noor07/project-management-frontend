@@ -145,7 +145,7 @@ function ClientDetailsPage({ visible, setVisible, clientDetails }) {
               </CCardBody>
             </CCard>
           </CTabPane>
-
+    
           {/* --- Address Details --- */}
           <CTabPane visible={activeTab === 'address'}>
             <CCard className="shadow-sm border-0">

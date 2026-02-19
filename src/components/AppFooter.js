@@ -20,6 +20,6 @@ const AppFooter = () => {
     </CFooter>
   )
 }
+// okay done 
 
-const api call bla bla this is for
 export default React.memo(AppFooter)
