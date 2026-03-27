@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import {
   CCard,
   CCardBody,
@@ -20,8 +20,15 @@ function SettingPage() {
 
 
   const [editMode, setEditMode] = useState(false);
-  const [editData, setEditData] = useState(settings);
+  // const [editData, setEditData] = useState(settings);
   const [files, setFiles] = useState({});
+  const [editData, setEditData] = useState({ websiteTitle: "" });
+
+useEffect(() => {
+  if (settings) {
+    setEditData(settings);
+  }
+}, [settings]);
 
   // Handle form input
   const handleChange = (e) => {
@@ -99,7 +106,7 @@ function SettingPage() {
             <CFormInput
               type="text"
               name="websiteTitle"
-              value={editData.websiteTitle || ""}
+              value={editData?.websiteTitle || ""}
               disabled={!editMode}
               onChange={handleChange}
             />
